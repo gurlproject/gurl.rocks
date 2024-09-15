@@ -1,0 +1,36 @@
+[build]
+publish = "gurl.rocks/public"
+command = "cd gurl.rocks && hugo --gc --minify --themesDir themes"
+
+[build.environment]
+HUGO_VERSION = "0.102.3"
+
+[context.production.environment]
+HUGO_VERSION = "0.102.3"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+HUGO_THEME = "hugo-blog-awesome"
+
+[context.split1]
+command = "cd gurl.rocks && hugo --gc --minify --enableGitInfo --themesDir themes"
+
+[context.split1.environment]
+HUGO_VERSION = "0.102.3"
+HUGO_ENV = "production"
+HUGO_THEME = "hugo-blog-awesome"
+
+[context.deploy-preview]
+command = "cd gurl.rocks && hugo --gc --minify --buildFuture --themesDir themes -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.102.3"
+HUGO_THEME = "hugo-blog-awesome"
+
+[context.branch-deploy]
+command = "cd gurl.rocks && hugo --gc --minify --themesDir themes -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.102.3"
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = "true"
