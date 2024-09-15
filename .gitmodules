@@ -1,0 +1,3 @@
+[submodule "gurl.rocks/themes/hugo-blog-awesome"]
+	path = gurl.rocks/themes/hugo-blog-awesome
+	url = https://github.com/hugo-sid/hugo-blog-awesome.git
