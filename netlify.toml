@@ -4,7 +4,7 @@
 [build]
   base = "/"
   publish = "gurl.rocks/public"
-  command = "cd gurl.rocks && hugo --gc --themesDir ../.."
+  command = "cd gurl.rocks && hugo --gc --themesDir ./themes"
 
 [build.environment]
   HUGO_VERSION = "0.123.8"
@@ -15,4 +15,4 @@
 # Deploy Preview context: all deploys generated from
 # a pull/merge request will inherit these settings.
 [context.deploy-preview]
-command = "cd gurl.rocks && hugo --gc --themesDir ../.. -b $DEPLOY_PRIME_URL"
+command = "cd gurl.rocks && hugo --gc --themesDir ./themes -b $DEPLOY_PRIME_URL"
